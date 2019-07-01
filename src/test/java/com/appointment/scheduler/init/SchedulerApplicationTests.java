@@ -1,4 +1,4 @@
-package com.appointment.scheduler;
+package com.appointment.scheduler.init;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
