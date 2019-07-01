@@ -1,6 +1,7 @@
 package com.appointment.scheduler.controller;
 
 import com.appointment.scheduler.exception.InvalidCredentialsException;
+import com.appointment.scheduler.init.AppConfig;
 import com.appointment.scheduler.model.ErrorObject;
 import com.appointment.scheduler.model.LoginData;
 import com.appointment.scheduler.model.User;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
+
 @RestController
 public class AuthController {
     public  AuthController(AuthenticateService service) {
@@ -24,9 +27,12 @@ public class AuthController {
     public ResponseEntity<Object> authenticate(@RequestBody User user) {
         User authUser = service.authenticate(user);
         LoginData loginData = new LoginData(authUser);
+        Date now = new Date();
+        loginData.setLoginTime(AppConfig.DATE_FORMATTER.format(now));
+        loginData.setLastAccessMilis(now.getTime());
         return new ResponseEntity<>(loginData, HttpStatus.OK);
     }
-    @ExceptionHandler({InvalidCredentialsException.class})
+    @ExceptionHandler(value = {InvalidCredentialsException.class})
     public ResponseEntity<Object> handleAuthenticateFailure(InvalidCredentialsException e) {
         return new ResponseEntity<>(ErrorObject.fromException(e), HttpStatus.FORBIDDEN);
     }

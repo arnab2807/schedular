@@ -1,7 +1,9 @@
 package com.appointment.scheduler.exception;
 
+import com.appointment.scheduler.init.AppConfig;
 import com.appointment.scheduler.model.User;
 import lombok.Data;
+import org.springframework.util.StringUtils;
 
 import javax.validation.constraints.NotNull;
 import java.util.Date;
@@ -12,11 +14,11 @@ public class InvalidCredentialsException extends RuntimeException implements App
     private static final long serialVersionUID = -1932919112193L;
     private final String message;
     private boolean passwordSupplied;
-    private Date errorTime;
+    private String errorTime;
 
     public InvalidCredentialsException(@NotNull User user) {
-        this.passwordSupplied = user.getPassword() != null;
+        this.passwordSupplied = !StringUtils.isEmpty(user.getPassword());
         this.message = "Invalid credentials supplied for user " + user.getUserId();
-        this.errorTime = new Date();
+        this.errorTime = AppConfig.DATE_FORMATTER.format(new Date());
     }
 }

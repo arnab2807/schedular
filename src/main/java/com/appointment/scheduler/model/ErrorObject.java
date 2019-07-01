@@ -11,7 +11,7 @@ public class ErrorObject implements Serializable {
     private static final long serialVersionUID = -1323913812312L;
     private String message;
     private String passwordSupplied;
-    private Date errorTime;
+    private String errorTime;
 
     public static ErrorObject fromException(ApplicationError error) {
         ErrorObject eo = new ErrorObject();

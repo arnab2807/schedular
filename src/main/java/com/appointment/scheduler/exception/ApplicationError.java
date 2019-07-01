@@ -4,6 +4,8 @@ import java.util.Date;
 
 public interface ApplicationError {
     String getMessage();
-    boolean isPasswordSupplied();
-    Date getErrorTime();
+    default boolean isPasswordSupplied() {
+        return false;
+    }
+    String getErrorTime();
 }

@@ -7,13 +7,13 @@ public class UserBuilder implements Builder<User> {
     private static UserBuilder builder;
 
     private UserBuilder() {
-        this.user = new User();
     }
 
     public static UserBuilder newBuilder() {
         if (builder == null) {
             builder = new UserBuilder();
         }
+        builder.user = new User();
         return builder;
     }
 

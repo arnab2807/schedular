@@ -22,7 +22,7 @@ public class LoginData implements Serializable {
     }
 
     private String sessionId;
-    private Date loginTime;
+    private String loginTime;
     private User loggedInUser;
     private long inactiveCounter;
     private long lastAccessMilis;
