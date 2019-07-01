@@ -3,12 +3,15 @@ package com.appointment.scheduler.exception;
 import com.appointment.scheduler.init.AppConfig;
 import com.appointment.scheduler.model.User;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import org.springframework.util.StringUtils;
 
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Data
+@EqualsAndHashCode(callSuper = false)
 public class InvalidCredentialsException extends RuntimeException implements ApplicationError {
 
     private static final long serialVersionUID = -1932919112193L;

@@ -1,10 +1,10 @@
 package com.appointment.scheduler.model;
 
-import com.appointment.scheduler.exception.ApplicationError;
-import lombok.Data;
-
 import java.io.Serializable;
-import java.util.Date;
+
+import com.appointment.scheduler.exception.ApplicationError;
+
+import lombok.Data;
 
 @Data
 public class ErrorObject implements Serializable {

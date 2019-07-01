@@ -1,14 +1,9 @@
 package com.appointment.scheduler.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.io.Serializable;
-import java.util.Base64;
-import java.util.Date;
-import java.util.Random;
 import java.util.UUID;
+
+import lombok.Data;
 
 @Data
 public class LoginData implements Serializable {
