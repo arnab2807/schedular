@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import {Route, RouterModule, Routes} from '@angular/router';
 import {FormsModule} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -13,7 +14,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HttpClient
   ],
   imports: [
     BrowserModule,
