@@ -1,3 +1,5 @@
 <div class="col-sm-12">
-  <input class="form-control" [ngModel]="userId">
+  <input class="form-control" type="text" [ngModel]="userId" name="userId">
+  <input class="form-control" type="password" [ngModel]="password" name="password">
+  <button class="btn btn-primary" (click)="login()">Login</button>
 </div>
