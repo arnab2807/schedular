@@ -1,23 +1,17 @@
 package com.appointment.scheduler.model;
 
-import java.io.Serializable;
+import java.util.HashMap;
 
-import com.appointment.scheduler.exception.ApplicationError;
+public class ErrorObject extends HashMap<String, Object> {
+    public static ErrorObject newInstance() {
+        return new ErrorObject();
+    }
+    public ErrorObject withError(String key, Object value) {
+        this.put(key, value);
+        return this;
+    }
 
-import lombok.Data;
-
-@Data
-public class ErrorObject implements Serializable {
-    private static final long serialVersionUID = -1323913812312L;
-    private String message;
-    private String passwordSupplied;
-    private String errorTime;
-
-    public static ErrorObject fromException(ApplicationError error) {
-        ErrorObject eo = new ErrorObject();
-        eo.message = error.getMessage();
-        eo.passwordSupplied = error.isPasswordSupplied() ? "YES" : "NO";
-        eo.errorTime = error.getErrorTime();
-        return eo;
+    public String toString() {
+        return super.toString();
     }
 }

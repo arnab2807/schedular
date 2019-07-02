@@ -1,4 +1,4 @@
-package com.appointment.scheduler.controller;
+package com.appointment.scheduler.controller.exceptionHandler;
 
 import com.appointment.scheduler.exception.ApplicationError;
 import com.appointment.scheduler.exception.DuplicateSessionException;
