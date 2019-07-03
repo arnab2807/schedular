@@ -23,13 +23,14 @@
               "src/assets"
             ],
             "styles": [
-//              "./node_modules/bootstrap/dist/css/bootstrap.css",
-//              "./node_modules/font-awesome/css/font-awesome.css",
+              "src/bootstrap.min.css",
+              //"src/font-awesome.min.css",
               "src/styles.css"
             ],
             "scripts": [
-              //" ./node_modules/jquery/dist/jquery.min.js",
-              // "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "src/jquery-1.12.4.min.js",
+              "src/popper.min.js",
+              "src/bootstrap.min.js"
             ],
             "es5BrowserSupport": true
           },

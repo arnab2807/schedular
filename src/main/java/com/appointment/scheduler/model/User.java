@@ -1,15 +1,11 @@
 package com.appointment.scheduler.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.List;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class User implements Serializable, Comparable<User> {
     private static final long serialVersionUID = -1594893120L;
     private String userId;

@@ -5,7 +5,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import {Route, RouterModule, Routes} from '@angular/router';
 import {FormsModule} from '@angular/forms';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {SchedulerService} from './scheduler.service';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -14,15 +15,18 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    HttpClient
+    LoginComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    SchedulerService,
+    HttpClient
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
